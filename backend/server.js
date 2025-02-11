@@ -1,15 +1,14 @@
-const express = require("express"); // Import Express
-const dotenv = require("dotenv"); // Import dotenv for environment variables
-const connectDB = require("./src/config/db"); // Import database connection function
+const express = require("express"); 
+const dotenv = require("dotenv"); 
+const connectDB = require("./src/config/db"); 
 
-dotenv.config(); // Load environment variables
-connectDB(); // Connect to MongoDB
+dotenv.config(); 
+connectDB();
 
-const app = express(); // Initialize Express app
-app.use(express.json()); // Middleware to parse JSON requests
+const app = express(); 
+app.use(express.json()); 
 
-// Routes
-app.use("/api/auth", require("./src/routes/authRoutes")); // Authentication routes
+app.use("/api/auth", require("./src/routes/authRoutes")); 
 
-const PORT = process.env.PORT || 5000; // Use .env port or default to 5000
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`)); // Start the server
+const PORT = process.env.PORT || 5000; 
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`)); 
