@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/dbConfig"); 
 const authRoutes = require("./routes/Authroutes");
 const busRoutes = require("./routes/busRoute");
+const routeRoute = require("./routes/routeRoute");
 dotenv.config(); 
 connectDB();
 
@@ -11,6 +12,7 @@ app.use(express.json());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/buses", busRoutes);
+app.use("/api/route", routeRoute);
 
 
 
